@@ -1,0 +1,22 @@
+!Job
+target: !Target
+  head: 82b5d5a1c685b90595e9ad013a7c7b341c527d2c
+  email: uwe.korn@quantco.com
+  branch: ARROW-12246-conda-recipes
+  remote: https://github.com/jorisvandenbossche/arrow
+  version: 3.1.0.dev550
+  no_rc_version: 3.1.0.dev550
+  no_rc_semver_version: 3.1.0-dev550
+tasks:
+  conda-osx-arm64-clang-py39: !Task
+    ci: azure
+    template: conda-recipes/azure.osx.yml
+    artifacts:
+    - arrow-cpp-3.1.0.dev550-py39(h[a-z0-9]+)_0_cpu.tar.bz2
+    - pyarrow-3.1.0.dev550-py39(h[a-z0-9]+)_0_cpu.tar.bz2
+    params:
+      config: osx_arm64_python3.8.____cpython
+    branch: build-195-azure-conda-osx-arm64-clang-py39
+    commit: 5ba0885adae707e4a301696b1fbf71fcd4995265
+params: {}
+branch: build-195
