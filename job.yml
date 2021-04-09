@@ -1,0 +1,23 @@
+!Job
+target: !Target
+  head: f32d66e6e75d4589f42a74c69658b6ab2aa22384
+  email: uwe.korn@quantco.com
+  branch: ARROW-12246-conda-recipes
+  remote: https://github.com/jorisvandenbossche/arrow
+  version: 3.1.0.dev551
+  no_rc_version: 3.1.0.dev551
+  no_rc_semver_version: 3.1.0-dev551
+tasks:
+  conda-win-vs2017-py36-r36: !Task
+    ci: azure
+    template: conda-recipes/azure.win.yml
+    artifacts:
+    - arrow-cpp-3.1.0.dev551-py36(h[a-z0-9]+)_0_cpu.tar.bz2
+    - pyarrow-3.1.0.dev551-py36(h[a-z0-9]+)_0_cpu.tar.bz2
+    params:
+      config: win_python3.6.____cpython
+      r_config: win_64_r_base3.6
+    branch: build-196-azure-conda-win-vs2017-py36-r36
+    commit: e079d4f9843b0a2ea717b577a634b036cc9ef73b
+params: {}
+branch: build-196
